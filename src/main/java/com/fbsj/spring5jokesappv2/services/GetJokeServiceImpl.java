@@ -9,8 +9,13 @@ import java.util.Locale;
 @Service
 public class GetJokeServiceImpl implements GetJokeService {
 
+    public final ChuckNorrisQuotes chuckNorrisQuotes;
+
+    public GetJokeServiceImpl() {
+        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    }
+
     public String getRandomQuote() {
-        ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
         return chuckNorrisQuotes.getRandomQuote();
     }
 
